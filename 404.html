@@ -1,0 +1,40 @@
+---
+permalink: "/404.html"
+layout: default
+---
+
+<style type="text/css" media="screen">
+  .container {
+    margin: 10px auto;
+    max-width: 600px;
+    text-align: center;
+  }
+  h1 {
+    margin: 30px 0;
+    font-size: 4em;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+</style>
+
+<div class="container">
+  <h1>404</h1>
+
+  <p><strong>你在尝试打开一个不存在的页面,</strong></p>
+  <p>不要乱来哟.</p>
+	    <p id="browserInfo"></p>
+    <p id="ipAddress"></p>
+
+    <script>
+        document.getElementById("browserInfo").innerText = "浏览器信息: " + navigator.userAgent;
+
+        fetch('http://ip-api.com/json')
+						.then(response => response.json())
+            .then(data => {
+                document.getElementById("ipAddress").innerText = "IP信息: " + JSON.stringify(data, null, 2);
+            })
+            .catch(error => {
+                console.log("获取IP地址失败: " + error);
+            });
+			</script>
+</div>

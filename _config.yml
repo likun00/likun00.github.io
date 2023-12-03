@@ -1,0 +1,12 @@
+title: 随笔
+list_title: kun随笔记录
+email: kun@qapro.cn
+description: kun随笔记录
+baseurl: ''
+url: ''
+twitter_username: ''
+github_username: likun00
+theme: minima
+author: Kun
+plugins:
+  - jekyll-feed
